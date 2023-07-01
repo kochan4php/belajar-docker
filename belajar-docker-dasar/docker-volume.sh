@@ -3,9 +3,11 @@
 
 # Membuat volume
 sudo docker volume create namavolume
+# sudo docker volume create mongovolume
 
 # Melihat volume
 sudo docker volume ls
 
 # Menghapus volume
 sudo docker volume rm namavolume
+# sudo docker volume rm mongovolume

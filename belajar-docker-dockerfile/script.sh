@@ -80,3 +80,10 @@ docker build -t kochan4php/user user
 docker container create --name user -p 8080:8080 kochan4php/user
 docker container start user
 docker container exec -it user /bin/sh
+
+# ARG Instruction
+docker build -t kochan4php/arg arg
+docker container create --name arg -p 8080:8080 kochan4php/arg
+docker container start arg
+docker container exec -it arg /bin/sh
+docker container logs arg

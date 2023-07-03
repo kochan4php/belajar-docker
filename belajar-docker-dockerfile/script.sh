@@ -48,7 +48,15 @@ docker container logs ignore
 docker build -t kochan4php/expose expose
 docker image ls | grep kochan4php
 docker image inspect kochan4php/expose
-docker container create --name expose kochan4php/expose
+docker container create --name expose --publish 8080:8080 kochan4php/expose
 docker container start expose
 docker container ls
+docker container exec -i -t expose /bin/sh
+
+# ENV Instruction
+docker build -t kochan4php/env env
+docker image ls | grep kochan4php
+docker image inspect kochan4php/env
+docker container create --name env --env APP_PORT=5000 --publish 5000:5000 kochan4php/env
+docker container start env
 docker container exec -i -t expose /bin/sh

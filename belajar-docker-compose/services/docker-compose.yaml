@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+    nginx-exp:
+        image: nginx:latest
+        container_name: nginx-exp
+    mongodb-exp:
+        image: mongo:latest
+        container_name: mongodb-exp

@@ -60,3 +60,17 @@ docker image inspect kochan4php/env
 docker container create --name env --env APP_PORT=5000 --publish 5000:5000 kochan4php/env
 docker container start env
 docker container exec -i -t expose /bin/sh
+
+# VOLUME Instruction
+docker build -t kochan4php/volume volume
+docker image inspect kochan4php/volume
+docker container create --name volume --env APP_PORT=5000 --publish 5000:5000 kochan4php/volume
+docker container start volume
+docker container logs volume
+docker container inspect volume
+
+# WORKDIR Instruction
+docker build -t kochan4php/workdir workdir
+docker container create --name workdir --publish 8000:8000 kochan4php/workdir
+docker container start workdir
+docker container exec -i -t workdir /bin/sh

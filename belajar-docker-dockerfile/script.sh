@@ -36,3 +36,10 @@ docker image ls | grep kochan4php
 docker container create --name copy kochan4php/copy
 docker container start copy
 docker container logs copy
+
+# .dockerignore
+docker build -t kochan4php/ignore ignore
+docker image ls | grep kochan4php
+docker container create --name ignore kochan4php/ignore
+docker container start ignore
+docker container logs ignore

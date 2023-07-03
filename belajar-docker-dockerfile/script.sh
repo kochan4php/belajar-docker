@@ -22,3 +22,10 @@ docker container logs cmd
 docker build -t kochan4php/label label
 docker image ls | grep kochan4php
 docker image inspect kochan4php/label
+
+# ADD Instruction
+docker build -t kochan4php/add add
+docker image ls | grep kochan4php
+docker container create --name add kochan4php/add
+docker container start add
+docker container logs add

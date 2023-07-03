@@ -87,3 +87,10 @@ docker container create --name arg -p 8080:8080 kochan4php/arg
 docker container start arg
 docker container exec -it arg /bin/sh
 docker container logs arg
+
+# HEALTHCHECK Instruction
+docker build -t kochan4php/health health
+docker image inspect kochan4php/health
+docker container create --name health -p 8080:8080 kochan4php/health
+docker container start health
+docker container ls

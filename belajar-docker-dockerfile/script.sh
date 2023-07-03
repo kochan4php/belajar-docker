@@ -5,28 +5,20 @@
 
 # FROM Instruction
 docker build -t kochan4php/from from
-
 docker image ls | grep kochan4php
 
 # FROM Instruction
 docker build -t kochan4php/run run --progress=plain --no-cache
-
 docker image ls | grep kochan4php
 
 # CMD Instruction
 docker build -t kochan4php/cmd cmd
-
 docker image ls | grep kochan4php
-
 docker container create --name cmd kochan4php/cmd
-
 docker container start cmd
-
 docker container logs cmd
 
 # LABEL Instruction
 docker build -t kochan4php/label label
-
 docker image ls | grep kochan4php
-
 docker image inspect kochan4php/label

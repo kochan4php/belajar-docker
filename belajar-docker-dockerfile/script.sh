@@ -43,3 +43,12 @@ docker image ls | grep kochan4php
 docker container create --name ignore kochan4php/ignore
 docker container start ignore
 docker container logs ignore
+
+# EXPOSE Instruction
+docker build -t kochan4php/expose expose
+docker image ls | grep kochan4php
+docker image inspect kochan4php/expose
+docker container create --name expose kochan4php/expose
+docker container start expose
+docker container ls
+docker container exec -i -t expose /bin/sh

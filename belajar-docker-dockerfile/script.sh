@@ -74,3 +74,9 @@ docker build -t kochan4php/workdir workdir
 docker container create --name workdir --publish 8000:8000 kochan4php/workdir
 docker container start workdir
 docker container exec -i -t workdir /bin/sh
+
+# USER Instruction
+docker build -t kochan4php/user user
+docker container create --name user -p 8080:8080 kochan4php/user
+docker container start user
+docker container exec -it user /bin/sh

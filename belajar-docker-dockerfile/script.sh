@@ -29,3 +29,10 @@ docker image ls | grep kochan4php
 docker container create --name add kochan4php/add
 docker container start add
 docker container logs add
+
+# ADD Instruction
+docker build -t kochan4php/copy copy
+docker image ls | grep kochan4php
+docker container create --name copy kochan4php/copy
+docker container start copy
+docker container logs copy

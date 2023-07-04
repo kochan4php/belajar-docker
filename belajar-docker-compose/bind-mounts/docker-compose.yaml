@@ -1,0 +1,31 @@
+version: "3.8"
+
+# References: https://docs.docker.com/compose/compose-file/compose-file-v3/#volumes
+
+services:
+    # Short Syntax
+    mongo1:
+        container_name: mongo1
+        image: mongo:latest
+        ports:
+            - "27020:27017"
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: kochan
+            MONGO_INITDB_ROOT_PASSWORD: kochan
+        volumes:
+            - "./data-mongo1:/data/db"
+
+    # Long Syntax
+    mongo2:
+        container_name: mongo2
+        image: mongo:latest
+        ports:
+            - "27021:27017"
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: kochan
+            MONGO_INITDB_ROOT_PASSWORD: kochan
+        volumes:
+            - type: bind
+              source: "./data-mongo2"
+              target: "/data/db"
+              read_only: false

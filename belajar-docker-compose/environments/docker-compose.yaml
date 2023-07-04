@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+    mongodb-container:
+        container_name: mongodb-container
+        image: mongo:latest
+        ports:
+            - "27020:27017"
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: kochan
+            MONGO_INITDB_ROOT_PASSWORD: kochan

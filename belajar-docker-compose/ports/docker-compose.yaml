@@ -1,0 +1,20 @@
+version: "3.8"
+
+# References: https://docs.docker.com/compose/compose-file/compose-file-v3/#ports
+
+services:
+    # Long Syntax
+    nginx-port1:
+        container_name: nginx-port1
+        image: nginx:latest
+        ports:
+            - protocol: tcp
+              published: 8080
+              target: 80
+
+    # Short Syntax
+    nginx-port2:
+        container_name: nginx-port2
+        image: nginx:latest
+        ports:
+            - "8081:80"

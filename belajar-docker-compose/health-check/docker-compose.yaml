@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+    app-go:
+        container_name: app-go
+        build:
+            context: "./app"
+            dockerfile: Dockerfile
+        image: app-golang
+        ports:
+            - "8080:8080"
+        healthcheck:
+            test: [ "CMD", "curl", "-f", "http://localhost:8080/health" ]
+            interval: 5s
+            timeout: 5s
+            retries: 3
+            start_period: 5s

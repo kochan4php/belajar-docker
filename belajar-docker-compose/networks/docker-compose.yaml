@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+    mongodb-container:
+        container_name: mongodb-container
+        image: mongo:latest
+        ports:
+            - "27018:27017"
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: kochan
+            MONGO_INITDB_ROOT_PASSWORD: kochan
+            MONGO_INITDB_DATABASE: admin
+        volumes:
+            - "mongo-data:/data/db"
+        networks:
+            - mongo-networks
+
+volumes:
+    mongo-data:
+        name: mongo-data
+
+networks:
+    mongo-networks:
+        name: mongo-networks
+        driver: bridge
